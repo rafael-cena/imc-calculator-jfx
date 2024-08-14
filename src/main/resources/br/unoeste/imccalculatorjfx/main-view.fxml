@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="439.0" prefWidth="397.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.unoeste.imccalculatorjfx.MainController">
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+  </padding>
+   <children>
+      <TextField fx:id="tfNome" alignment="CENTER" prefHeight="0.0" prefWidth="295.0" promptText="Digite o seu nome" style="-fx-background-radius: 50;">
+         <font>
+            <Font name="Serif Regular" size="16.0" />
+         </font>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </TextField>
+      <Label text="Peso (Kg)" textAlignment="CENTER">
+         <font>
+            <Font name="Serif Regular" size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="40.0" />
+         </VBox.margin>
+      </Label>
+      <Slider fx:id="slPeso" blockIncrement="1.0" max="180.0" min="3.0" prefHeight="14.0" prefWidth="357.0" value="60.0" />
+      <Label text="60 Kg">
+         <font>
+            <Font name="Serif Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label text="Altura (cm)" textAlignment="CENTER">
+         <font>
+            <Font name="Serif Regular" size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="40.0" />
+         </VBox.margin>
+      </Label>
+      <Slider fx:id="slAltura" blockIncrement="1.0" max="250.0" min="20.0" value="160.0" />
+      <Label text="160 cm (1.6 m)">
+         <font>
+            <Font name="Serif Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbIMC" text="22.4">
+         <font>
+            <Font name="Serif Bold" size="48.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="40.0" />
+         </VBox.margin>
+      </Label>
+      <Label fx:id="lbCategoria" text="Peso Normal">
+         <font>
+            <Font name="Serif Bold Italic" size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </Label>
+      <Hyperlink onAction="#onSalvarHistorico" text="Clique aqui para armazenar os valores">
+         <font>
+            <Font name="Serif Italic" size="14.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </Hyperlink>
+   </children>
+</VBox>

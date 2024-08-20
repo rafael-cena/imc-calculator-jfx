@@ -15,4 +15,8 @@ public class PessoaRepo {
     public void add (Pessoa pessoa) {
         list.add(pessoa);
     }
+
+    public List<Pessoa> getList() {
+        return list;
+    }
 }

@@ -3,14 +3,20 @@ package br.unoeste.imccalculatorjfx;
 import br.unoeste.imccalculatorjfx.entity.Pessoa;
 import br.unoeste.imccalculatorjfx.repository.PessoaRepo;
 import br.unoeste.imccalculatorjfx.util.IMC;
+import br.unoeste.imccalculatorjfx.util.Singleton;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class MainController {
 
@@ -46,9 +52,9 @@ public class MainController {
     void onSalvarHistorico(ActionEvent event) {
         if (!tfNome.getText().isEmpty()) {
             // salvar via serialização
-            Pessoa pessoa = new Pessoa(tfNome.getText(), slPeso.getValue(), slAltura.getValue(), Double.parseDouble(lbIMC.getText()));
-            PessoaRepo repo = new PessoaRepo();
-            repo.add(pessoa);
+            Pessoa pessoa = new Pessoa(tfNome.getText(), slPeso.getValue(), slAltura.getValue(), Double.parseDouble(lbIMC.getText().replace(",",".")));
+//            PessoaRepo repo = new PessoaRepo();
+            Singleton.getRepo().add(pessoa);
 
             valueDefault();
         }
@@ -88,5 +94,20 @@ public class MainController {
 //        lbIMC.setText(String.format("%.1f", imc));
         lbIMC.setText(String.format("%.1f", IMC.get(peso, altura)));
         lbCategoria.setText(IMC.getCondicao(IMC.get(peso, altura)));
+    }
+
+    public void onNovoIMC(ActionEvent actionEvent) {
+
+    }
+
+    public void onMostrarHistorico(ActionEvent actionEvent) throws Exception {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(IMCCalculator.class.getResource("table-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 397, 469);
+        Stage stage = new Stage();
+        stage.setTitle("Histórico");
+        stage.setScene(scene);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
     }
 }

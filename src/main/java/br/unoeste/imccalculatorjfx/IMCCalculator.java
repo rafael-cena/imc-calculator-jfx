@@ -12,8 +12,8 @@ public class IMCCalculator extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(IMCCalculator.class.getResource("main-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 397, 439);
-        stage.setTitle("IMC Calculator FX v0.1");
+        Scene scene = new Scene(fxmlLoader.load(), 397, 469);
+        stage.setTitle("IMC Calculator FX v0.2");
         stage.initStyle(StageStyle.UTILITY);
         stage.setResizable(false);
         stage.setScene(scene);

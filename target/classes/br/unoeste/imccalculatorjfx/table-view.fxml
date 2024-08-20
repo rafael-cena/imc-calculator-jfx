@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane maxHeight="469.0" maxWidth="397.0" minHeight="469.0" minWidth="397.0" prefHeight="469.0" prefWidth="397.0" style="-fx-background-color: #f8f9fa;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.unoeste.imccalculatorjfx.TableController">
+   <center>
+      <TableView fx:id="tabela" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="coNome" minWidth="50.0" prefWidth="180.0" text="Nome" />
+          <TableColumn fx:id="coPeso" minWidth="0.0" prefWidth="70.0" resizable="false" text="Peso" />
+            <TableColumn fx:id="coAltura" prefWidth="70.0" resizable="false" text="Altura" />
+            <TableColumn fx:id="coIMC" prefWidth="70.0" resizable="false" text="IMC" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </center>
+</BorderPane>

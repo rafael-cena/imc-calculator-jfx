@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="439.0" prefWidth="397.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.unoeste.imccalculatorjfx.MainController">
+<VBox alignment="CENTER" prefHeight="439.0" prefWidth="397.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.unoeste.imccalculatorjfx.MainController">
   <padding>
     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
   </padding>
@@ -29,8 +29,8 @@
             <Insets top="40.0" />
          </VBox.margin>
       </Label>
-      <Slider fx:id="slPeso" blockIncrement="1.0" max="180.0" min="3.0" prefHeight="14.0" prefWidth="357.0" value="60.0" />
-      <Label text="60 Kg">
+      <Slider fx:id="slPeso" blockIncrement="1.0" max="180.0" min="3.0" onMouseClicked="#onPesoMouseMouseClicked" onMouseDragged="#onPesoMouseDragged" prefHeight="14.0" prefWidth="357.0" value="60.0" />
+      <Label fx:id="lbPeso" text="60 Kg">
          <font>
             <Font name="Serif Bold" size="14.0" />
          </font>
@@ -43,13 +43,13 @@
             <Insets top="40.0" />
          </VBox.margin>
       </Label>
-      <Slider fx:id="slAltura" blockIncrement="1.0" max="250.0" min="20.0" value="160.0" />
-      <Label text="160 cm (1.6 m)">
+      <Slider fx:id="slAltura" blockIncrement="1.0" max="250.0" min="20.0" onMouseClicked="#onAlturaMouseMouseClicked" onMouseDragged="#onAlturaMouseDragged" value="160.0" />
+      <Label fx:id="lbAltura" text="160 cm (1.6 m)">
          <font>
             <Font name="Serif Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lbIMC" text="22.4">
+      <Label fx:id="lbIMC" text="23,4">
          <font>
             <Font name="Serif Bold" size="48.0" />
          </font>

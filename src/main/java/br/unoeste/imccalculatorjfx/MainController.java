@@ -103,11 +103,12 @@ public class MainController {
     public void onMostrarHistorico(ActionEvent actionEvent) throws Exception {
 
         FXMLLoader fxmlLoader = new FXMLLoader(IMCCalculator.class.getResource("table-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 397, 469);
+        Scene scene = new Scene(fxmlLoader.load(), 500, 469);
         Stage stage = new Stage();
         stage.setTitle("Histórico");
         stage.setScene(scene);
         stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initStyle(StageStyle.UTILITY);
         stage.showAndWait();
     }
 }
